@@ -1,0 +1,60 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="pane-item">
+  <template>
+    <style>
+      :host {
+        contain: content;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      #header {
+        height: 25px;
+        cursor: pointer;
+      }
+r
+      #content {
+        display: flex;
+        flex: 1;
+      }
+    </style>
+
+    <header id="header" on-click="headerCLick">
+      <slot name="header"></slot>
+    </header>
+
+    <div id="content">
+      <slot></slot>
+    </div>
+    
+  </template>
+  <script>
+
+    class PaneItem extends Polymer.Element {
+
+      static get is() { return 'pane-item'; }
+
+      static get properties() {
+        return {
+
+          flexGrow: {
+            type: Number,
+            value: 1,
+            notify: true
+          }
+
+        };
+      }
+
+      headerCLick() {
+        console.log('ey')
+      }
+
+    }
+
+    window.customElements.define(PaneItem.is, PaneItem);
+
+  </script>
+</dom-module>

@@ -10,9 +10,64 @@
     <link rel="import" href="../pane-container.html">
 
     <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        -khtml-user-select: none;
+        -moz-user-select: -moz-none;
+        -ms-user-select: none;
+        -webkit-user-select: none;
+        font-family: sans-serif;
+        font-size: 13px;
+        height: 100%;
+        margin: 0;
+        user-select: none;
+      }
+
+      /*#buttons {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: scale(0.66);
+        transform-origin: 0 0;
+      }*/
     </style>
   </head>
   <body>
-    <pane-container></pane-container>
+
+    <!--<div id="buttons">
+      <button type="button" onclick="loadLayout1()">Set Layout 1</button>
+      <button type="button" onclick="loadLayout2()">Set Layout 2</button>
+    </div>-->
+
+    <pane-container>
+      <pane-item>
+        <div slot="header" style="display: flex; align-items: center; height: 100%; justify-content: flex-end ">
+          header
+        </div>
+
+        Esto es un pepino de pane!
+      </pane-item>
+    </pane-container>
+
+
+    <!--<script>
+      const paneContainer = document.querySelector('pane-container');
+      const layouts = [
+        JSON.parse('[{"type":"axis","orientation":"horizontal","flexScale":1,"content":[{"type":"axis","orientation":"vertical","flexScale":1,"content":[{"type":"pane","flexScale":1},{"type":"pane","flexScale":1}]},{"type":"pane","flexScale":1}]}]'),
+        JSON.parse('[{"type":"axis","orientation":"horizontal","flexScale":1,"content":[{"type":"axis","orientation":"vertical","flexScale":1,"content":[{"type":"pane","flexScale":1.767875647668394},{"type":"pane","flexScale":0.23212435233160622}]},{"type":"axis","orientation":"vertical","flexScale":1,"content":[{"type":"axis","orientation":"horizontal","flexScale":0.25906735751295334,"content":[{"type":"pane","flexScale":1},{"type":"pane","flexScale":1}]},{"type":"pane","flexScale":1.7409326424870466}]}]}]'),
+      ];
+
+      function loadLayout1() {
+        paneContainer.renderLayout(layouts[0]);
+      }
+
+      function loadLayout2() {
+        paneContainer.renderLayout(layouts[1]);
+      }
+    </script>-->
   </body>
 </html>

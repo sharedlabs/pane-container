@@ -1,12 +1,17 @@
 <link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="pane-item.html">
 
 <dom-module id="pane-container">
   <template>
     <style>
       :host {
-        display: block;
+        display: flex;
+        flex: 1;
+        height: 100%;
       }
     </style>
+    
+    <slot select="pane-item"></slot>
 
   </template>
   <script>
@@ -17,7 +22,36 @@
 
       static get properties() {
         return {
+
+          activePane: {
+            type: Object,
+            readOnly: true,
+            observer: '_activePaneChanged'
+          },
+
+          _currentDragPane: Object,
+
+          _splitMode: {
+            type: Boolean,
+            value: false
+          }
+
         };
+      }
+
+      constructor() {
+        super();
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+      }
+
+      disconnectedCallback() {
+        super.disconnectedCallback();
+      }
+
+      _activePaneChanged() {
       }
 
     }
