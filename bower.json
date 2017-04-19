@@ -1,0 +1,14 @@
+{
+  "name": "pane-container",
+  "main": "pane-container.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0-rc.6"
+  },
+  "devDependencies": {
+    "web-component-tester": "^6.0.0-prerelease.5",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0-rc.8"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0-rc.6"
+  }
+}

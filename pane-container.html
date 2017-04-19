@@ -1,0 +1,28 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="pane-container">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+  </template>
+  <script>
+
+    class PaneContainer extends Polymer.Element {
+
+      static get is() { return 'pane-container'; }
+
+      static get properties() {
+        return {
+        };
+      }
+
+    }
+
+    window.customElements.define(PaneContainer.is, PaneContainer);
+
+  </script>
+</dom-module>
